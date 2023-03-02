@@ -217,7 +217,7 @@ a {
       width: 30px;
     }
   }
-  
+
   article {
     background: linear-gradient(
       to right, 
@@ -264,21 +264,5 @@ a {
   p {
     font-family: "Dank Mono", ui-monospace, monospace;
     white-space: pre;
-font-size: 30px;
-  }
-
-  
-  .nice-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nice-list li {
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+font-size: 25px;
   }
