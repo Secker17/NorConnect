@@ -1,43 +1,68 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../kontakt.css">
-    <title>Kontakt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../Kontakt/kontakt.css">
+  <title>NorConnect</title>
 </head>
 
 
-<h2>Kontakt Oss</h2>
 
-<form action="martin@secker.no" method="post" autocomplete="off">
-    
-    <label for="name">Ditt Navn</label>
-    <input type="text" name="name" placeholder="Ditt Navn">
+<div class="container">
+    <form action="action_page.php">
+  
+      <label for="fname">Navn</label>
+      <input type="text" id="fname" name="firstname" placeholder="Ditt navn..">
+  
+      <label for="lname">Etternavn</label>
+      <input type="text" id="lname" name="lastname" placeholder="Ditt etternavn..">
+  
+      <label for="country">Land</label>
+      <select id="country" name="country">
+        <option value="australia">Norge</option>
+        <option value="canada">Sverige</option>
+        <option value="usa">Danmark</option>
+      </select>
+  
+      <label for="subject">Melding</label>
+      <textarea id="subject" name="subject" placeholder="Skriv noe..." style="height:200px"></textarea>
+  
+      <input type="submit" value="Send">
+  
+    </form>
+  </div>
 
-    <label for="email">Email</label>
-    <input type="email" name="email" placeholder="Email">
 
-    <label for="message">Melding</label>
-    <textarea name="message" placeholder="Melding"></textarea>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  </head>
+  <nav>
+    <ul>
+      <li><a href="/index.html">Hjem</a></li>
+      <li><a href="../Happyface/happy.html">Happyface</a></li>
+      <li><a href="/Iklipp/iklipp.html">Iklipp</a></li>
+      <li>Om oss</li>
+      <li><a href="/Kontakt/kontakt.html">Kontakt</a></li>
+      <li class="slide"></li>
+    </ul>
+  </nav>
 
-    <input type="submit" value="Submit">
 
-</form>
-<body style="background-color:#2696e9;">
-
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        </head>
-        <nav>
-          <ul>
-            <li><a href="/index.html">Hjem</a></li>
-            <li><a href="../Happyface/happy.html">Happyface</a></li>
-            <li><a href="/Iklipp/iklipp.html">Iklipp</a></li>
-            <li>Om oss</li>
-            <li><a href="/Kontakt/kontakt.html">Kontakt</a></li>
-            <li class="slide"></li>
-          </ul>
-        </nav>
-        <section>
-            <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="dcd3aba2-92c8-47bf-8502-d9570bbe9c8d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-            </section>
+<script>(function($){
+  // variables
+  elementWidth = $('ul').width(),
+  containerWidth = $('nav').width(),
+  difference = elementWidth-containerWidth,
+  finalWidth = difference * 1.5,
+  element = $('ul');
+  
+  // active on click
+  $('li').on('click', function(){
+    $('li').removeClass('active');
+    $(this).addClass('active');
+  });
+  
+})(jQuery);</script>
+  </html>
+</body>
