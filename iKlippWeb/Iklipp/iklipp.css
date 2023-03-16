@@ -1,0 +1,395 @@
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff;
+  }
+  ::selection {
+    background-color: #f7ca18;
+    color: #1b1b1b;
+  }
+  nav {
+    width: 100%;
+    background-color: #0b0b0b;
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    overflow: hidden;
+    z-index: 34;
+
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 140vw;
+  }
+  nav li {
+    margin: 0;
+    float: left;
+    display: inline-block;
+    height: 98px;
+    margin-bottom: 2px;
+    line-height: 100px;
+    width: 20vw;
+    text-align: center;
+    color: #555;
+    transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    transform: translateY(100%);
+  }
+  nav li.active {
+    background-color: #151515;
+    color: #efefef;
+  }
+  nav li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f7ca18;
+  }
+  nav li:nth-child(1) {
+    animation: pop 0.5s 0.15s 1 forwards;
+  }
+  nav li:nth-child(2) {
+    animation: pop 0.5s 0.3s 1 forwards;
+  }
+  nav li:nth-child(3) {
+    animation: pop 0.5s 0.45s 1 forwards;
+  }
+  nav li:nth-child(4) {
+    animation: pop 0.5s 0.6s 1 forwards;
+  }
+  nav li:nth-child(5) {
+    animation: pop 0.5s 0.75s 1 forwards;
+  }
+  nav li:nth-child(6) {
+    animation: pop 0.5s 0.9s 1 forwards;
+  }
+  nav li:nth-child(7) {
+    animation: pop 0.5s 1.05s 1 forwards;
+  }
+  nav li:hover {
+    color: #ececec;
+  }
+  nav li:active {
+    background-color: #222;
+  }
+  nav li:nth-child(1):hover ~ .slide {
+    left: 0;
+  }
+  nav li:nth-child(2):hover ~ .slide {
+    left: 20vw;
+  }
+  nav li:nth-child(3):hover ~ .slide {
+    left: 40vw;
+  }
+  nav li:nth-child(4):hover ~ .slide {
+    left: 60vw;
+  }
+  nav li:nth-child(5):hover ~ .slide {
+    left: 80vw;
+  }
+  nav li:nth-child(6):hover ~ .slide {
+    left: 100vw;
+  }
+  nav li:nth-child(7):hover ~ .slide {
+    left: 120vw;
+  }
+  nav li.slide {
+    position: absolute;
+    left: -20vw;
+    top: 0;
+    background-color: #fff;
+    z-index: -1;
+    height: 2px;
+    margin-top: 98px;
+    transition: left 0.3s ease;
+    transform: translateY(0);
+  }
+
+  @-moz-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pop {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-o-keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes byBottom {
+    0% {
+      transform: translateY(150%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-moz-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-webkit-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @-o-keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+  @keyframes linkAfter {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 30px;
+    }
+  }
+
+  article {
+    background: linear-gradient(
+      to right, 
+      hsl(120, 2%, 11%), 
+      hsl(240, 3%, 7%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 10vmin;
+    line-height: 1.1;
+  }
+  
+  body {
+    background: hsl(59, 100%, 50%);
+    
+    min-block-size: 100%;
+    min-inline-size: 100%;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+    font-family: system-ui;
+    font-size: min(200%, 5vmin);
+  }
+  
+  h1, h3, body {
+    margin: 0;
+  }
+  
+  h3 {
+    font-family: "Dank Mono", ui-monospace, monospace;
+    white-space: pre;
+
+  }
+  
+  html {
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  p {
+    font-family: "Dank Mono", ui-monospace, monospace;
+    white-space: pre;
+font-size: 25px;
+width: 100%;
+  }
+
+
+
+
+  body {
+    background-color: #d4d4d4;
+    margin: 0;
+    padding: 0;
+  }
+
+.panel {
+  height: 400px;
+  background: white;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#intro {
+  height: 350px;
+}
+
+#first {
+background-color: #f7ca18;
+}
+
+#second {
+  flex-flow: row wrap-reverse;
+  background-color: #f7ca18;
+  z-index: 33;
+}
+
+.panel-item {
+  width: 50vw;
+}
+
+#text {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#image-first {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#image-second {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* triangle classes. Equilateral => width=0.866*height. The positioning & negative margins are based on width of visible border to center the triangle between the two columns and not disrupt the flex-flow.  */
+.triangle-right {
+  position: relative;
+  width: 0; height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 46px solid #fff;
+  top: 50%;
+  left: 46px;
+  margin-top: -40px;
+  margin-left: -46px;
+}
+
+.triangle-left {
+  position: relative;
+  width: 0; height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 46px solid #fff;
+  right: 46px;
+  margin-top: -46px; margin-bottom: -46px;
+}
+
+.caption {
+  font-family: "Open Sans";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 0 10%;
+}
+
+.description {
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0 10%;
+}
+
+hr {
+  width: 20vw;
+  height: 0;
+  border: solid 2px #f90;
+}
+
+#intro hr {
+  width: 30vw;
+  border: double 1px #000;
+}
+
+#intro {
+  background: #ffffff;
+}
+
+
+@media (max-width: 648px) {
+  .panel-item {
+    width: 100vw;
+  }
+  .triangle-left, .triangle-right {
+    display: none;
+  }
+}

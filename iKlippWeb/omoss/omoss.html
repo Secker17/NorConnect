@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="omoss.css">
+  <title>NorConnect</title>
+</head>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  </head>
+  <nav>
+    <ul>
+        <li><a href="/index.html">Hjem</a></li>
+        <li><a href="../Happyface/happy.html">Happyface</a></li>
+        <li><a href="/Iklipp/iklipp.html">Iklipp</a></li>
+        <li><a href="../omoss/omoss.html">Om Oss</a></li>
+        <li><a href="/Kontakt/kontakt.html">Kontakt</a></li>
+        <li class="slide"></li>
+    </ul>
+  </nav>
+  <section>
+    <video poster="/bilder/NorConnectWhite.png" id="bgvid" playsinline autoplay muted loop>
+        <!-- 
+      - Video needs to be muted, since Chrome 66+ will not autoplay video with sound.
+      WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+      <source src="/bilder/mermedmindre2.mov" type="video/webm">
+      <source src="/bilder/mermedmindre2.mov" type="video/mp4">
+      
+      </video>
+      <div id="connect">
+      <h1>NorConnect</h1>
+      <p>Oprettet ...
+      <p>iKlipp består av en app presentert på et nettbrett som plasseres i din butikk, samt en webside der du kan legge inn produkter og produktbilder som vises i app-en. Når en av dine kunder kjøper produkt som vises i app-en, kan kunden enkelt registrere kjøpet samt sitt telefonnummer. App-en viser deretter hvor mange ganger kunden har kjøpt produktene, og om kunden har oppnådd bonus.</p>
+      <p>HappyFace er ett system som lar seg fange opp hvor fornøyd dine kunder egentlig er i det øyeblikket de går ut døra. I motsetning til de fleste løsningene på markedet der det benyttes en gammeldags boks med plastikk knapper, har vi laget tilsvarende på et nettbrett med en moderne og elegant presentasjon. Dette gir deg mulighet til å gi kunden en undermeny dersom vedkommende ikke er helt fornøyd. Dermed fanger du opp hvorfor kunden ikke er helt fornøyd.
+
+        Normalt plasseres denne ved utgangsdøra til din bedrift. Dermed kan kunden anonymt gi sin tilbakemelding uten å føle seg presset til å gi en bedre tilbakemelding enn det vedkommende egentlig føler.  Vi mener også at det er i det øyeblikket kunden forlater lokale det er best å spørre om hvordan den total opplevelsen har vært. Et spørreskjema i posten 14 dager senere hører fortiden til ?
+        
+        Systemet består av en app presentert på et nettbrett som plasseres i din butikk, samt en webside der du kan bestemme om og hva slags undermeny du ønsker i din butikk. Når en av dine kunder forlater lokalet kan vedkommende enkelt trykke på det ansiktet han mener dere fortjener, presser han “middels” eller “surt” fjes er det en god anledning til å vise en undermeny og be om en mer presis årsak til dette. I ditt webpanel kan du gå inn når som helst å sjekke hvor fornøyde dine kunder har vært når som helst.</p>
+      <button>Pause</button>
+      </div>  
+</section>
+
+<script>(function($){
+  // variables
+  elementWidth = $('ul').width(),
+  containerWidth = $('nav').width(),
+  difference = elementWidth-containerWidth,
+  finalWidth = difference * 1.5,
+  element = $('ul');
+  
+  // active on click
+  $('li').on('click', function(){
+    $('li').removeClass('active');
+    $(this).addClass('active');
+  });
+  
+})(jQuery);</script>
+
+<script>var vid = document.getElementById("bgvid");
+    var pauseButton = document.querySelector("#connect button");
+    
+    if (window.matchMedia('(prefers-reduced-motion)').matches) {
+        vid.removeAttribute("autoplay");
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+    }
+    
+    function vidFade() {
+      vid.classList.add("stopfade");
+    }
+    
+    vid.addEventListener('ended', function()
+    {
+    // only functional if "loop" is removed 
+    vid.pause();
+    // to capture IE10
+    vidFade();
+    }); 
+    
+    
+    pauseButton.addEventListener("click", function() {
+      vid.classList.toggle("stopfade");
+      if (vid.paused) {
+        vid.play();
+        pauseButton.innerHTML = "Pause";
+      } else {
+        vid.pause();
+        pauseButton.innerHTML = "Paused";
+      }
+    })
+    
+    </script>
+
+  </html>
+</body>
